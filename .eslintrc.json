@@ -1,0 +1,11 @@
+{
+  "extends": ["next", "next/core-web-vitals"],
+  "plugins": ["@typescript-eslint"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    // Các quy tắc ESLint của bạn ở đây
+  }
+}
