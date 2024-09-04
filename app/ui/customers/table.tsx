@@ -1,16 +1,16 @@
 import Image from 'next/image';
 import { lusitana } from '@/app/ui/fonts';
 import Search from '@/app/ui/search';
-import {
-  CustomersTableType,
-  FormattedCustomersTable,
-} from '@/app/lib/definitions';
+import { FormattedCustomersTable } from '@/app/lib/definitions';
+import Pagination from '../pagination';
 
 export default async function CustomersTable({
-  customers,
+  customers,totalPages
 }: {
   customers: FormattedCustomersTable[];
-}) {
+  totalPages:number
+}) {  
+ 
   return (
     <div className="w-full">
       <h1 className={`${lusitana.className} mb-8 text-xl md:text-2xl`}>
@@ -117,6 +117,9 @@ export default async function CustomersTable({
             </div>
           </div>
         </div>
+      </div>
+      <div className="mt-5 flex w-full justify-center">
+        <Pagination totalPages={totalPages} />
       </div>
     </div>
   );
